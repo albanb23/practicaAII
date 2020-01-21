@@ -1,0 +1,46 @@
+<style type="text/css">
+	.grid-container {
+	display: grid;
+	grid-column-gap: 50px;
+	}
+</style>
+
+{% extends 'master.html' %}
+
+{% block titulo %} Lista de los albumes que se pueden comprar en preorder{% endblock %}
+
+
+{% block contenido %}
+<div>
+	<dl>
+
+		<div class="grid-container">
+			{% for a in alb %}
+			<ul class="grid-item">
+				<h3>{{a.titulo}}</h3>
+				<img src={{a.imagen}} />
+				<p>
+					<strong>Precio original: </strong>
+					{{a.precioOriginal}}
+				</p>
+				<p class="red">
+					<strong>Precio con descuento: </strong>
+					{{a.precioDescuento}}
+				</p>
+				<p>
+					<strong>Fecha de lanzamiento: </strong>
+					{{a.fecha}}
+				</p>
+				<p>
+					<strong>Numero de ventas: </strong>
+					{{a.ventas}}
+				</p>
+				<hr></hr>
+			</ul>
+
+			{% endfor %}
+		</div>
+
+	</dl>
+</div>
+{% endblock %}

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang='es'>
+	{% extends 'master.html' %}
+	{% block titulo %} Lista de albums {% endblock %}
+	{% block contenido %}
+
+	<head>
+		<style>
+			
+		</style>
+	</head>
+	<body>
+		<div class="grid-container">
+			{% for a in albums %}
+			<ul class="grid-item">
+				<h2>{{a.titulo}}</h2>
+				<img src={{a.imagen}} />
+				<p>
+					<strong>Precio original: </strong>
+					{{a.precioOriginal}}
+				</p>
+				<p class="red">
+					<strong>Precio con descuento: </strong>
+					{{a.precioDescuento}}
+				</p>
+				<p>
+					<strong>Fecha de lanzamiento: </strong>
+					{{a.fecha}}
+				</p>
+				<p>
+					<strong>Numero de ventas: </strong>
+					{{a.ventas}}
+				</p>
+				<hr></hr>
+			</ul>
+
+			{% endfor %}
+		</div>
+	</body>
+	{% endblock %}
+</html>
+</DOCTYPE>

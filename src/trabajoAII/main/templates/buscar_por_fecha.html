@@ -1,0 +1,63 @@
+
+{% extends 'master.html' %}
+
+{% block titulo %} Albums posteriores a la fecha de lanzamiento indicada {% endblock %}
+
+{% block paginaActiva %}
+<li class="uk-active">
+	<span>Busqueda de Albums</span>
+</li>
+{% endblock %}
+
+
+{% block contenido %}
+<div>
+	<form id="formulario" method="post" action=''>
+		{% csrf_token %}
+			<legend class="search">Buscar: </legend>
+			<input type="text" name="fecha" id="id_fecha"
+				placeholder="yyyy-mm-dd" />
+			<BR>
+				<BR>
+
+					<input type='submit' value='Buscar' />
+	</form>
+
+	<hr>
+
+		{% if albums %}
+		<h3> Albums: {{ albums|length }}</h3>
+		<dl class="uk-description-list-line">
+
+			<div class="grid-container">
+			{% for a in albums %}
+			<ul class="grid-item">
+				<h2>{{a.titulo}}</h2>
+				<img src={{a.imagen}} />
+				<p>
+					<strong>Precio original: </strong>
+					{{a.precioOriginal}}
+				</p>
+				<p class="red">
+					<strong>Precio con descuento: </strong>
+					{{a.precioDescuento}}
+				</p>
+				<p>
+					<strong>Fecha de lanzamiento: </strong>
+					{{a.fecha}}
+				</p>
+				<p>
+					<strong>Numero de ventas: </strong>
+					{{a.ventas}}
+				</p>
+				<hr></hr>
+			</ul>
+
+			{% endfor %}
+		</div>
+
+		</dl>
+
+		{% endif %}
+</div>
+{% endblock %}

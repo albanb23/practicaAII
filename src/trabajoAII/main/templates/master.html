@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang='es'>
+	<head>
+		<meta charset='utf-8'>
+
+			<style>
+				body {
+				background-image:
+				url("https://images.unsplash.com/photo-1511184150666-9bb7d41a88f4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80");
+				}
+				
+				.grid-container {
+				display: grid;
+				grid-template-columns: auto auto auto;
+				}
+				
+				.grid-item {
+				background-color: white;
+				border: 0px;
+				padding: 20px;
+				font-size: 13px;
+				text-align: center;
+				font-family: Lucida Sans Unicode;
+				}
+				
+				.red {
+				color: red;
+				}
+				
+				.myButton {
+				box-shadow:inset 0px 1px 0px 0px #dcecfb;
+				background:linear-gradient(to bottom, #bddbfa 5%, #80b5ea 100%);
+				background-color:#bddbfa;
+				border-radius:6px;
+				border:1px solid #84bbf3;
+				display:inline-block;
+				cursor:pointer;
+				color:#ffffff;
+				font-family:Lucida Sans Unicode;
+				font-size:15px;
+				font-weight:bold;
+				padding:6px 24px;
+				text-decoration:none;
+				text-shadow:0px 1px 0px #528ecc;
+				}
+				
+				.myButton:hover {
+				background:linear-gradient(to bottom, #80b5ea 5%, #bddbfa 100%);
+				background-color:#80b5ea;
+				}
+				
+				.myButton:active {
+				position:relative;
+				top:1px;
+				}
+				
+				ul {
+				font-size: 15px;
+				text-align: center;
+				}
+				
+				h1{
+				font-family:Lucida Sans Unicode;
+				color:#455DA5;
+				text-align: center;
+				}
+				
+				.search{
+				font-family:Lucida Sans Unicode;
+				color:#455DA5;
+				font-size:20px;
+				}
+				
+				input {
+				display: inline-block;
+				-webkit-box-sizing: content-box;
+				-moz-box-sizing: content-box;
+				box-sizing: content-box;
+				padding: 10px 30px 10px 20px;
+				border: 1px solid #b7b7b7;
+				-webkit-border-radius: 10px;
+				border-radius: 10px;
+				font: normal 16px/normal Arial, Helvetica, sans-serif;
+				color: rgba(0,142,198,1);
+				-o-text-overflow: clip;
+				text-overflow: clip;
+				background: rgba(252,252,252,1);
+				-webkit-box-shadow: 2px 2px 2px 0 rgba(0,0,0,0.2) inset;
+				box-shadow: 2px 2px 2px 0 rgba(0,0,0,0.2) inset;
+				text-shadow: 1px 1px 0 rgba(255,255,255,0.66) ;
+				-webkit-transition: all 200ms cubic-bezier(0.42, 0, 0.58, 1);
+				-moz-transition: all 200ms cubic-bezier(0.42, 0, 0.58, 1);
+				-o-transition: all 200ms cubic-bezier(0.42, 0, 0.58, 1);
+				transition: all 200ms cubic-bezier(0.42, 0, 0.58, 1);
+				}
+				.index_text{
+				font-family:Lucida Sans Unicode;
+				color:#455DA5;
+				text-align: center;
+				}
+			</style>
+
+	</head>
+	<body>
+		<div>
+			<h1>PRACTICA VOLUNTARIA</h1>
+			<nav>
+				<ul>
+					<a class="myButton" href="/populate">Popular Base de Datos</a>
+					<a class="myButton" href="/index.html">Inicio</a>
+					<a class="myButton" href="/mostrar_album">Mostrar todos los albums</a>
+					<a class="myButton" href="/album_mas_vendido">Mostrar los 3 albums mas vendidos</a>
+					<br />
+					<br />
+					<a class="myButton" href="/album_preorder">Mostrar los albumes que se pueden
+						comprar en preorder</a>
+					<a class="myButton" href="/buscar_por_titulo">Buscar un album por su titulo</a>
+					<a class="myButton" href="/buscar_por_fecha">Buscar un album por su fecha de
+						lanzamiento</a>
+				</ul>
+			</nav>
+
+			<hr>
+
+				<h1>{% block titulo %} {% endblock %}</h1>
+
+				<div>
+					{% block contenido %} {% endblock %}
+				</div>
+		</div>
+	</body>
+</html>
